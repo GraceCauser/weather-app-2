@@ -1,3 +1,5 @@
+//note to self, the things in the "#" link back to the id="" in the html file
+
 function refreshWeather(response) {
     let temperatureElement = document.querySelector("#temperature");
     let temperature = response.data.temperature.current;
@@ -6,9 +8,7 @@ function refreshWeather(response) {
     let humidityElement = document.querySelector("#humidity");
     let windElement = document.querySelector("#wind");
     let timeElement = document.querySelector("#time");
-    //note, the things in the "#" link back to the id="" in the html file
     let date = new Date(response.data.time * 1000);
-    // weather image
     let iconElement = document.querySelector("#icon");
 
 
@@ -46,12 +46,34 @@ function handleSearchSubmit(event) {
     let searchInput = document.querySelector("#search-form-input");
 
     searchCity(searchInput.value);
-
-    // call the API
-    //search for the city
 }
+
+//loop function for the 5-day forecast
+function displayForecast() {
+
+    let days = ["Fri", "Sat", "Sun", "Mon", "Tues"]
+    let forecastHtml = "";
+
+    days.forEach(function (day) {
+        forecastHtml = forecastHtml + `
+        <div class="weather-forcast-day">
+                            <div class="weather-forecast-date">${day}</div>
+                            <div class="weather-forecast-icon">☀️</div>
+                            <div class="weather-forecast-temperatures">
+                                <div class="weather-forecast-temperature"><strong>20°C</strong></div>
+                                <div class="weather-forecast-temperature">10°C</div>
+                            </div>
+                        </div>`;
+    });
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = forecastHtml;
+}
+
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Paris")
+displayForecast();
+
+
