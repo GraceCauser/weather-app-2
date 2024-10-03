@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Weather-App-1</title>
+</head>
+
+<body>
+    <div class="weather-app">
+        <header>
+            <form class="search-form" id="search-form">
+                <input type="search" placeholder="Enter a city..." required id="search-form-input"
+                    class="search-form-input" />
+                <input type="submit" value="Search" class="search-form-button" />
+            </form>
+        </header>
+        <main>
+            <div class="weather-app-data">
+                <div>
+                    <h1 class="weather-app-city" id="city"></h1>
+                    <p class="weather-app-details">
+                        <span id="time"></span>,
+                        <span id="description"></span>
+                        <br />
+                        Humidity: <strong id="humidity"></strong>, Wind: <strong id="wind"></strong>
+                    </p>
+                </div>
+                <div class="weather-app-temperature-container">
+                    <div id="icon"></div>
+                    <div class="weather-app-temperature" id="temperature"></div>
+                    <div class="weather-app-unit">°C</div>
+                </div>
+            </div>
+        </main>
+
+        <footer>This project was coded by
+            <a href="https://github.com/GraceCauser" target="blank">Grace Causer</a> and is
+            <a href="https://github.com/GraceCauser/weather-app-1" target="blank">open-sourced on GitHub</a> and
+            <a href="https://weather-app-1-shecodes.netlify.app/" target="blank">hosted on Netlify</a>.
+        </footer>
+    </div>
+    <script src="src/script.js"></script>
+</body>
+
+</html>
